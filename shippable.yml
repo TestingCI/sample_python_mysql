@@ -13,6 +13,7 @@ before_script:
   - mkdir -p shippable/codecoverage
   - mysql -e 'create database if not exists test;'
 
+
 script:
   - nosetests test.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
   - which python && coverage run --branch test.py
