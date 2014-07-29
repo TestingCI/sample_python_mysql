@@ -40,7 +40,7 @@ class Mysql():
             self.disconnect()
 
     def reconnect(self):
-        self.con = mdb.connect('127.0.0.1', 'shippable', '', 'test')
+        self.con = mdb.connect('127.0.0.1', 'shippable', '', 'project-test')
         return self.con
 
     def disconnect(self):
