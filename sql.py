@@ -4,7 +4,7 @@ import sys
 
 class Mysql():
     def __init__(self):
-        self.con = mdb.connect('127.0.0.1', 'shippable', '', 'project-test')
+        self.con = mdb.connect('127.0.0.1', 'shippable', '', 'test')
 
     def populate(self):
         try:
@@ -40,7 +40,7 @@ class Mysql():
             self.disconnect()
 
     def reconnect(self):
-        self.con = mdb.connect('127.0.0.1', 'shippable', '', 'project-test')
+        self.con = mdb.connect('127.0.0.1', 'shippable', '', 'test')
         return self.con
 
     def disconnect(self):
