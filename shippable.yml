@@ -13,7 +13,7 @@ env:
     
 before_script:
   #- pip list
-  - echo $FOO
+  - echo $foo
   - echo $BAR
   - mkdir -p shippable/testresults
   - mkdir -p shippable/codecoverage
@@ -24,3 +24,4 @@ script:
   - nosetests project-test.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
   - which python && coverage run --branch project-test.py
   - which python && coverage xml -o shippable/codecoverage/coverage.xml project-test.py
+  - echo $foo
