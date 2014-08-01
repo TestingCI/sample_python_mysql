@@ -9,13 +9,11 @@ install:
 env:  
  global:
     - name=foo
-    - secure: rXu3MhkrD8WuuJyD2CG3ZADcNEeoCct442uJ0Sbbunriz1bonaZgO8EEpE7QnRC0oeMc7MGMFYUfR2O2t3ou1wRwWNJWg3CV0NigDLvQ77eo9BfBRJuWy6VgOkrgiPDiwXphtjxQgYbbpcVrTgEEXQo+i3Ju8ovwHzEGaOHIau9Cvf0TLCwDwOriTRTJSpgZG4FD9wsu0prXJBzhE3RiLcBa0m5kCRTPFOQNOsWPBIaBLUTiQUMNGPZ1qR/D2k275rTPfSRldIAfv4ZGO5tFitTsRlTgmnaqtYGB87Ow/auSjAloC6ZIrn0QTtSQmclpRfFFDaKqdNr9L6Y4u/3flg==
-    #- secure: L5JBI+7TguV6I4iSi7RDEzshQ9cn4oVr/6WR/PzaBht7LUkOqq4Qm9bxKKHDGpmu6ENPwsHGoQRoNT2OzBPFlcIN1Qunu47BqHigymq+YkXe82PECBjbyRqqP3WJ2xFwmeRaRaH67B6pxg8wTQkKkZFk6x/rUV0VmVG9jKenf6cnV40vqp/MQVjp0AktK9BBgrSm+tVJSSJ1hYfdqfZuWTt9YDdtxCh1S/RNnl/DZCC5//fmh5qVsTa4IKRyprjg36eUYGla7JJnMGsmXKnZUm79FVzJRo8psusrNnTVreWJzwB2zFvSizwhn9hY4YxQ5RTDMQ+L69KMkyYrJV2/wg==
-    #- secure: vHJpJ6o/gpiSOqlxg/Jtb4YYxsu8hASmRc5RQGSY1yPqeie7L8v1z4MX8lAYHZToguVqXYYIrVZpy+yGdI3FKK0dac8J8bO1i6tEIEAwPIzctBhSxfmiYr0BGXieVy9w2fB+OrDNlMwWi57F5QbMarcNr7YHokFYY2tcb/tL+Sne///NUcc3AG6Kwt/GM7k0sWMNPZcjjMRzGNo042LHEocXN69er887nrf8xRheta+eUoCPSp67URMKoVBuFWm4IwdklnPmSZK+HKbnVajpXOrelxy8pLnMMZP26CoVzNO7387R6UxSgglWgf+xLSCjaXIR3EcZ07bMwn4XRdrz5Q==
+    - secure: XW+pvD+0R/qL7QWxbTuyxfjou0fvC/bPZNkdXUfdzd61mDp/p828tn0zu6TIxImCVkCZvapJMAnJb50xR70iXUMLFhiIG+TinGfsLGJ9Fui/dRmH0nBtnwUuQwDoDasASTbJwBhhQo3l/6jFY1SEtCzOwIa0w1mgyuPk8XZTFGrn9Ik9SiFocEsUnhipC9jHHF5uiwbsB2GTQzNKYwgbwaqNYlMqhWLnZ3vGSm4dT5GdwUmu0GrzcKy8Bpk67V6EKUQFh7XWZkot/lIS7/IIVr+MTrejENOLv9sD2RT0AJSyDdTKVGjWA5stqylI+nKgbcFdpMwXtzVButTiRt3sDQ==
     
 before_script:
   #- pip list
-  - echo $foo
+  - echo $FOO
   - echo $BAR
   - mkdir -p shippable/testresults
   - mkdir -p shippable/codecoverage
@@ -26,6 +24,6 @@ script:
   - nosetests project-test.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
   - which python && coverage run --branch project-test.py
   - which python && coverage xml -o shippable/codecoverage/coverage.xml project-test.py
-  - echo $foo
+  - echo $FOO
   - echo $name
-  - echo $bar
+  - echo $BAR
