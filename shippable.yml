@@ -9,12 +9,13 @@ install:
 env:  
  global:
     - name=foo
-    - secure: XW+pvD+0R/qL7QWxbTuyxfjou0fvC/bPZNkdXUfdzd61mDp/p828tn0zu6TIxImCVkCZvapJMAnJb50xR70iXUMLFhiIG+TinGfsLGJ9Fui/dRmH0nBtnwUuQwDoDasASTbJwBhhQo3l/6jFY1SEtCzOwIa0w1mgyuPk8XZTFGrn9Ik9SiFocEsUnhipC9jHHF5uiwbsB2GTQzNKYwgbwaqNYlMqhWLnZ3vGSm4dT5GdwUmu0GrzcKy8Bpk67V6EKUQFh7XWZkot/lIS7/IIVr+MTrejENOLv9sD2RT0AJSyDdTKVGjWA5stqylI+nKgbcFdpMwXtzVButTiRt3sDQ==
-    
+   # - secure: XW+pvD+0R/qL7QWxbTuyxfjou0fvC/bPZNkdXUfdzd61mDp/p828tn0zu6TIxImCVkCZvapJMAnJb50xR70iXUMLFhiIG+TinGfsLGJ9Fui/dRmH0nBtnwUuQwDoDasASTbJwBhhQo3l/6jFY1SEtCzOwIa0w1mgyuPk8XZTFGrn9Ik9SiFocEsUnhipC9jHHF5uiwbsB2GTQzNKYwgbwaqNYlMqhWLnZ3vGSm4dT5GdwUmu0GrzcKy8Bpk67V6EKUQFh7XWZkot/lIS7/IIVr+MTrejENOLv9sD2RT0AJSyDdTKVGjWA5stqylI+nKgbcFdpMwXtzVButTiRt3sDQ==
+    - secure: aQMTR6rpw+raH5ZjtBo5/wMjzQsfqEaJ2iciQhzqKbi53i/7BdGozeq4kZ9IhsOW4MLmqAXj1lIy6iGPwC0M3vFnQ115n7cyh5bxdLRbeZ9mBteCcdzOHOlCnLBFhOC7FztuIyZ/yxIf5jXlOme4jIcz1dlMTG8M4zlljLNjOnKAghCdnVceJmj61wcbjErfyDOEuYJnfrI+XAyG0fDc5Df0FLrZx3FNq7OroUp+/jr3Qd3Fb6F7Xjic3a4ZH71c/286jLBXveadeCOI5CqTxVPuscQ0Ye1YzBOzNkbwHMSw/CYKvIu1MVOT88baAqTNCpM7TCnfLUcOgcwxd/9LaQ==
 before_script:
   #- pip list
   - echo $FOO
   - echo $BAR
+  - echo $words
   - mkdir -p shippable/testresults
   - mkdir -p shippable/codecoverage
   - mysql -e 'create database if not exists `project-test`;'
@@ -27,5 +28,5 @@ script:
   - echo $FOO
   - echo $name
   - echo $BAR
-after_success:
-  - git push git@heroku.com:v2-heroku-test.git master
+#after_success:
+ # - git push git@heroku.com:v2-heroku-test.git master
