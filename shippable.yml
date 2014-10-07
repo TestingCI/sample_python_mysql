@@ -30,3 +30,4 @@ script:
   - echo $BAR
 #after_success:
  # - git push git@heroku.com:v2-heroku-test.git master
+cache: true 
